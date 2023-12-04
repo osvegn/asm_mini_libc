@@ -6,21 +6,23 @@ section .text
 ;  rax        rdi             rsi
 
 strcmp:
-    mov rcx, 0
+    mov r8b, byte [rdi]
+    mov r9b, byte [rsi]
+    cmp r8b, 0
+    je .end
+    cmp r9b, 0
+    je .end
+    cmp r8b, r9b
+    jne .end
+    inc rdi
+    inc rsi
+    jmp strcmp
 
-strcmp_loop:
-    mov r8, [rdi + rcx]
-    mov r9, [rsi + rcx]
-    cmp r8, r9
-    jne strcmp_end
-    inc rcx
-    jmp strcmp_loop
-
-strcmp_end:
-    mov rax, byte r8
-    sub rax, byte r9
+.end:
+    mov rax, [rsi]
+    sub rax, [rdi]
     ret
 
-strcmp_error:
-    mov rax, 0
+.error:
+    xor rax, rax
     ret

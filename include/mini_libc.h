@@ -9,5 +9,7 @@ void *memcpy(void *dest, const void *src, size_t n);
 int strcmp(const char *src1, const char *src2);
 void *memmove(void *dest, const void *src, size_t n);
 const char *strstr(const char *, const char *);
+size_t strncmp(const char *, const char *, size_t n);
+char *rindex(const char *, int);
 
 #endif // MINI_LIBC_H

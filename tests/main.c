@@ -8,7 +8,7 @@ int main(void)
     char str_memcpy1[11] = "coucou !!!";
     char str_memcpy2[11] = "";
     char strcmp1[10] = "salut";
-    char strcmp2[10] = "ralut";
+    char strcmp2[10] = "saltt";
     char strmemmove1[10] = "tests!!!!";
     char strmemmove2[10] = "";
 
@@ -25,5 +25,8 @@ int main(void)
     printf("memmove (%s)(%s) after\n", strmemmove2, strmemmove1);
 
     printf("strstr: %s\n", strstr("sample string!", "ple "));
+
+    printf("strncmp (%s)(%s)(%d): %d\n", "string", "strinr", 4, strncmp("string", "strinr", 4));
+    printf("rindex (%s)(%c): %s\n", str, 's', rindex(str, 's'));
     return 0;
 }

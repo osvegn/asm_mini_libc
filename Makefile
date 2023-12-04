@@ -10,6 +10,8 @@ SRC		=	sources/strlen.s \
 			sources/strcmp.s \
 			sources/memmove.s \
 			sources/strstr.s \
+			sources/strncmp.s \
+			sources/rindex.s \
 
 RM		=	rm -fr
 

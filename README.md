@@ -11,9 +11,9 @@
 - [x] memcpy
 - [x] strcmp
 - [x] memmove
-- [ ] strncmp
+- [x] strncmp
 - [ ] strcasecmp
-- [ ] rindex
+- [x] rindex
 - [x] strstr
 - [ ] strpbrk
 - [ ] strcspn
