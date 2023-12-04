@@ -1,30 +1,30 @@
-global memcpy
+bits 64
 
 section .text
+    global memcpy
 
 ; void *memcpy(void *dest, const void *src, size_t n);
 ; rax          rdi         rsi              rdx
 
 memcpy:
     cmp rsi, 0
-    je memcpy_error
-    mov rcx, 0
+    je .error
+    xor rcx, rcx
 
-memcpy_loop:
+.loop:
     cmp rdx, rcx
-    jle memcpy_end
+    jle .end
     cmp byte [rsi + rcx], 0
-    je memcpy_end
-    mov rax, [rsi + rcx]
-    mov [rdi + rcx], rax
+    je .end
+    mov al, [rsi + rcx]
+    mov [rdi + rcx], al
     inc rcx
-    jmp memcpy_loop
+    jmp .loop
 
-memcpy_error:
-    mov rax, 0
+.error:
+    xor rax, rax
     ret
 
-memcpy_end:
-    mov byte [rdi + rcx], 0
+.end:
     mov rax, rdi
     ret

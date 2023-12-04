@@ -8,6 +8,8 @@ SRC		=	sources/strlen.s \
 			sources/memset.s \
 			sources/memcpy.s \
 			sources/strcmp.s \
+			sources/memmove.s \
+			sources/strstr.s \
 
 RM		=	rm -fr
 
